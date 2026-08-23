@@ -1,0 +1,13 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Local environment
+.env
+
+# OS/editor
+.DS_Store
+Thumbs.db
+
