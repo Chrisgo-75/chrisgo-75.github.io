@@ -1,0 +1,738 @@
+---
+layout: default
+title: Work
+permalink: /work/
+---
+
+<!-- =========================================================
+     Work Hero
+========================================================= -->
+<section class="work-hero">
+  <div class="container work-hero-inner">
+    <p class="section-eyebrow">Work</p>
+
+    <h1>
+      Applications, APIs, integrations,
+      and production systems.
+    </h1>
+
+    <p class="work-hero-lead">
+      My work spans backend application development, REST APIs,
+      database design, enterprise integrations, authentication,
+      automation, infrastructure, and cross-platform applications.
+    </p>
+
+    <p class="work-hero-summary">
+      The projects below represent selected systems I've designed,
+      developed, integrated, or maintained during my work with
+      UW–Madison's College of Agricultural and Life Sciences,
+      along with client web development through CCArndt Ventures.
+    </p>
+
+    <div class="work-hero-actions">
+      <a href="#professional-work" class="btn btn-primary">
+        Professional Work
+      </a>
+
+      <a href="#client-work" class="btn btn-secondary">
+        Client Work
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Professional Work Intro
+========================================================= -->
+<section id="professional-work" class="work-section">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Professional Application Development</p>
+
+      <h2>Selected systems and application work</h2>
+
+      <p>
+        Much of my recent work is collaborative. I primarily focus
+        on backend development, application architecture, databases,
+        APIs, authentication, integrations, deployment, and production
+        support while working alongside frontend developers and other
+        CALS IT team members.
+      </p>
+    </header>
+
+    <div class="work-context">
+      <div>
+        <h3>About these projects</h3>
+
+        <p>
+          These case studies focus on the areas where I contributed
+          directly rather than presenting each application as a
+          one-person project. Many are part of a larger portfolio
+          developed and maintained collaboratively by CALS IT.
+        </p>
+      </div>
+
+      <div class="work-context-action">
+        <a
+          href="https://applications-showcased-947fb5.pages.doit.wisc.edu/"
+          class="text-link"
+          target="_blank"
+          rel="noopener"
+        >
+          View the CALS IT Application Showcase ↗
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Featured Project: CALS Data
+========================================================= -->
+<section class="work-project">
+  <div class="container">
+    <article class="work-project-grid">
+
+      <div class="work-project-heading">
+        <p class="project-type">Data Integration</p>
+
+        <h2>CALS Data</h2>
+
+        <p class="work-project-tagline">
+          Synchronizing institutional people, employment,
+          and organizational data for downstream CALS systems.
+        </p>
+
+        <p class="technology-list">
+          Ruby on Rails · MySQL · REST APIs · Docker · Background Jobs
+        </p>
+      </div>
+
+      <div class="work-project-content">
+
+        <div class="work-project-section">
+          <h3>The system</h3>
+
+          <p>
+            CALS Data is a long-running Rails application that
+            synchronizes institutional data into CALS-managed systems.
+            It has continued evolving as university data sources,
+            APIs, organizational structures, and business requirements
+            have changed.
+          </p>
+        </div>
+
+        <div class="work-project-section">
+          <h3>My contribution</h3>
+
+          <ul class="work-highlight-list">
+            <li>
+              Develop and maintain Rails services responsible for
+              institutional data synchronization.
+            </li>
+
+            <li>
+              Integrate with campus APIs that provide people,
+              employment, and organizational data.
+            </li>
+
+            <li>
+              Design synchronization and reconciliation processes
+              that identify missing, changed, inactive, or inconsistent
+              records.
+            </li>
+
+            <li>
+              Maintain the relational data model and supporting
+              MySQL queries.
+            </li>
+
+            <li>
+              Support scheduled processing, auditing, notifications,
+              deployment, and long-term production operation.
+            </li>
+          </ul>
+        </div>
+
+        <div class="work-project-section">
+          <h3>Why it matters</h3>
+
+          <p>
+            This project represents one of the most important lessons
+            from long-term application ownership: enterprise software
+            needs to adapt as the systems around it change. CALS Data
+            has continued serving that role through multiple generations
+            of institutional data sources.
+          </p>
+        </div>
+
+        <a
+          href="{{ '/work/cals-data/' | relative_url }}"
+          class="text-link work-case-study-link"
+        >
+          View CALS Data case study →
+        </a>
+
+      </div>
+
+    </article>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Featured Project: WRA
+========================================================= -->
+<section class="work-project work-project-alt">
+  <div class="container">
+    <article class="work-project-grid">
+
+      <div class="work-project-heading">
+        <p class="project-type">Rails API</p>
+
+        <h2>Workday Role Access</h2>
+
+        <p class="work-project-tagline">
+          A backend API supporting CALS workflows for requesting
+          and managing Workday security-role access.
+        </p>
+
+        <p class="technology-list">
+          Rails · MySQL · Vue.js · OIDC · OAuth 2.0 · PKCE · Pundit
+        </p>
+      </div>
+
+      <div class="work-project-content">
+
+        <div class="work-project-section">
+          <h3>The system</h3>
+
+          <p>
+            Workday Role Access supports the workflow used to request
+            and manage access to Workday security roles. The application
+            follows CALS IT's newer frontend/backend architecture,
+            pairing a Vue.js client with a Rails API.
+          </p>
+        </div>
+
+        <div class="work-project-section">
+          <h3>My contribution</h3>
+
+          <ul class="work-highlight-list">
+            <li>
+              Design and develop the Rails REST API used by the
+              Vue.js frontend.
+            </li>
+
+            <li>
+              Participate in requirements gathering and relational
+              database design.
+            </li>
+
+            <li>
+              Implement authentication using OpenID Connect,
+              Authorization Code flow, and PKCE.
+            </li>
+
+            <li>
+              Validate JWTs and apply policy-based authorization
+              to application resources.
+            </li>
+
+            <li>
+              Design predictable API responses and error handling
+              for frontend consumers.
+            </li>
+          </ul>
+        </div>
+
+        <div class="work-project-section">
+          <h3>What it demonstrates</h3>
+
+          <p>
+            This project represents the evolution of my role from
+            traditional full-stack Rails development toward backend
+            APIs that serve independently developed frontend
+            applications.
+          </p>
+        </div>
+
+        <a
+          href="{{ '/work/workday-role-access/' | relative_url }}"
+          class="text-link work-case-study-link"
+        >
+          View Workday Role Access case study →
+        </a>
+
+      </div>
+
+    </article>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Featured Project: ARS Portal
+========================================================= -->
+<section class="work-project">
+  <div class="container">
+    <article class="work-project-grid">
+
+      <div class="work-project-heading">
+        <p class="project-type">Web &amp; Mobile</p>
+
+        <h2>ARS Portal</h2>
+
+        <p class="work-project-tagline">
+          One Rails application delivered through the web,
+          iOS, and Android using Hotwire Native.
+        </p>
+
+        <p class="technology-list">
+          Rails · Hotwire · Stimulus · Hotwire Native · iOS · Android
+        </p>
+      </div>
+
+      <div class="work-project-content">
+
+        <div class="work-project-section">
+          <h3>The system</h3>
+
+          <p>
+            ARS Portal provides digital services for Agricultural
+            Research Stations. Rather than building three independent
+            applications, the project uses Rails as the primary
+            application while native iOS and Android clients provide
+            access to the same workflows.
+          </p>
+        </div>
+
+        <div class="work-project-section">
+          <h3>My contribution</h3>
+
+          <ul class="work-highlight-list">
+            <li>
+              Develop the Rails application and server-driven
+              business workflows.
+            </li>
+
+            <li>
+              Build and configure native iOS and Android shells
+              using Hotwire Native.
+            </li>
+
+            <li>
+              Keep business rules centralized in Rails instead
+              of duplicating application logic across platforms.
+            </li>
+
+            <li>
+              Handle mobile-specific configuration and application
+              behavior where native functionality is required.
+            </li>
+
+            <li>
+              Support deployment and ongoing development across
+              all three application targets.
+            </li>
+          </ul>
+        </div>
+
+        <div class="work-project-section">
+          <h3>What it demonstrates</h3>
+
+          <p>
+            ARS Portal expanded my Rails experience into cross-platform
+            application development while retaining the maintainability
+            and server-driven architecture that make Rails effective
+            for business applications.
+          </p>
+        </div>
+
+        <a
+          href="{{ '/work/ars-portal/' | relative_url }}"
+          class="text-link work-case-study-link"
+        >
+          View ARS Portal case study →
+        </a>
+
+      </div>
+
+    </article>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Featured Project: CALS Notifications
+========================================================= -->
+<section class="work-project work-project-alt">
+  <div class="container">
+    <article class="work-project-grid">
+
+      <div class="work-project-heading">
+        <p class="project-type">Automation &amp; Operations</p>
+
+        <h2>CALS Notifications</h2>
+
+        <p class="work-project-tagline">
+          Scheduled automation, auditing, synchronization,
+          and operational notifications supporting CALS IT.
+        </p>
+
+        <p class="technology-list">
+          Rails · Ruby · MySQL · APIs · Background Jobs · Email
+        </p>
+      </div>
+
+      <div class="work-project-content">
+
+        <div class="work-project-section">
+          <h3>The system</h3>
+
+          <p>
+            CALS Notifications is a long-running Rails application
+            that automates scheduled operational tasks, system audits,
+            data synchronization, and notifications across several
+            CALS IT processes.
+          </p>
+        </div>
+
+        <div class="work-project-section">
+          <h3>My contribution</h3>
+
+          <ul class="work-highlight-list">
+            <li>
+              Develop recurring jobs that automate operational
+              and data-related processes.
+            </li>
+
+            <li>
+              Integrate with institutional systems and external
+              services.
+            </li>
+
+            <li>
+              Build audits that identify conditions requiring
+              review or intervention.
+            </li>
+
+            <li>
+              Generate actionable notifications when data or
+              system conditions need attention.
+            </li>
+
+            <li>
+              Maintain the application as requirements and
+              dependent systems evolve.
+            </li>
+          </ul>
+        </div>
+
+        <div class="work-project-section">
+          <h3>What it demonstrates</h3>
+
+          <p>
+            The project highlights the less-visible side of application
+            development: automation, reliability, monitoring, scheduled
+            processing, and maintaining software that supports ongoing
+            business operations.
+          </p>
+        </div>
+
+        <a
+          href="{{ '/work/cals-notifications/' | relative_url }}"
+          class="text-link work-case-study-link"
+        >
+          View CALS Notifications case study →
+        </a>
+
+      </div>
+
+    </article>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Additional Professional Work
+========================================================= -->
+<section class="work-section">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Additional Work</p>
+
+      <h2>Other application development</h2>
+
+      <p>
+        Additional projects that demonstrate different parts of
+        my application-development experience.
+      </p>
+    </header>
+
+
+    <div class="work-card-grid">
+
+      <!-- ARM -->
+      <article class="work-card">
+        <div>
+          <p class="project-type">Rails API</p>
+          <h3>ARM</h3>
+        </div>
+
+        <p>
+          Backend development for a CALS application used to manage
+          organizational roles, relationships, departments, programs,
+          and related authorization rules.
+        </p>
+
+        <ul class="work-card-highlights">
+          <li>Rails REST API</li>
+          <li>Relational database design</li>
+          <li>Role-based authorization</li>
+          <li>Vue.js frontend integration</li>
+        </ul>
+
+        <p class="technology-list">
+          Rails · MySQL · Vue.js · Pundit
+        </p>
+      </article>
+
+
+      <!-- Building Access -->
+      <article class="work-card">
+        <div>
+          <p class="project-type">Business Application</p>
+          <h3>Building Access</h3>
+        </div>
+
+        <p>
+          Application supporting building-access and key-request
+          workflows for multiple CALS facilities, including
+          administrative management and reporting.
+        </p>
+
+        <ul class="work-card-highlights">
+          <li>Business workflow development</li>
+          <li>Custom operational reports</li>
+          <li>Data management</li>
+          <li>Production application support</li>
+        </ul>
+
+        <p class="technology-list">
+          Rails · SQL · Reporting · Authentication
+        </p>
+      </article>
+
+
+      <!-- Student Award Payments -->
+      <article class="work-card">
+        <div>
+          <p class="project-type">Systems Integration</p>
+          <h3>Student Award Payments</h3>
+        </div>
+
+        <p>
+          Application work supporting student award-payment workflows
+          and integration between application data and other
+          institutional services.
+        </p>
+
+        <ul class="work-card-highlights">
+          <li>Rails backend development</li>
+          <li>API integration</li>
+          <li>SharePoint integration</li>
+          <li>Team-based application development</li>
+        </ul>
+
+        <p class="technology-list">
+          Rails · Vue.js · Microsoft Graph · SharePoint
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Client Work
+========================================================= -->
+<section id="client-work" class="work-section work-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Client Work</p>
+
+      <h2>Small-business web development</h2>
+
+      <p>
+        Through CCArndt Ventures LLC, I also help small businesses
+        create and maintain practical, accessible web presences.
+        These projects provide publicly accessible examples of
+        production web work.
+      </p>
+    </header>
+
+
+    <div class="client-work-grid">
+
+      <!-- CherDan Chocolates -->
+      <article class="client-work-card">
+        <div class="client-work-content">
+          <p class="project-type">Small-Business Website</p>
+
+          <h3>CherDan Chocolates</h3>
+
+          <p>
+            Website development and ongoing maintenance for a
+            Wisconsin chocolate business, including company,
+            product, FAQ, video, and contact content.
+          </p>
+
+          <p class="technology-list">
+            HTML · CSS · Bootstrap · PHP
+          </p>
+        </div>
+
+        <a
+          href="https://cherdanchocolates.com/"
+          target="_blank"
+          rel="noopener"
+          class="text-link"
+        >
+          Visit CherDan Chocolates ↗
+        </a>
+      </article>
+
+
+      <!-- Bradford House -->
+      <article class="client-work-card">
+        <div class="client-work-content">
+          <p class="project-type">Hospitality Website</p>
+
+          <h3>Bradford House</h3>
+
+          <p>
+            Website supporting a Southern Wisconsin lodging and
+            retreat property, providing information about the
+            property, rooms, reservations, and contact options.
+          </p>
+
+          <p class="technology-list">
+            WordPress · Content · Responsive Development
+          </p>
+        </div>
+
+        <a
+          href="https://bradfordhouse2418.com/"
+          target="_blank"
+          rel="noopener"
+          class="text-link"
+        >
+          Visit Bradford House ↗
+        </a>
+      </article>
+
+
+      <!-- Globe Sheet Metal -->
+      <article class="client-work-card">
+        <div class="client-work-content">
+          <p class="project-type">Small-Business Website</p>
+
+          <h3>Globe Sheet Metal</h3>
+
+          <p>
+            Business website presenting company information,
+            capabilities, services, and contact information for
+            a long-established sheet-metal company.
+          </p>
+
+          <p class="technology-list">
+            Web Design · HTML · CSS · Content
+          </p>
+        </div>
+
+        <a
+          href="https://globesheetmetal.com/"
+          target="_blank"
+          rel="noopener"
+          class="text-link"
+        >
+          Visit Globe Sheet Metal ↗
+        </a>
+      </article>
+
+    </div>
+
+
+    <div class="work-client-footer">
+      <p>
+        Looking for small-business web development?
+      </p>
+
+      <a
+        href="https://ccarndt.com/"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-secondary"
+      >
+        Visit CCArndt Ventures ↗
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Closing CTA
+========================================================= -->
+<section class="work-contact">
+  <div class="container work-contact-inner">
+
+    <div>
+      <p class="section-eyebrow">My Background</p>
+
+      <h2>There's more behind the projects.</h2>
+
+      <p>
+        Learn how my role has evolved from full-stack development
+        into APIs, integrations, data systems, infrastructure,
+        and cross-platform application development.
+      </p>
+    </div>
+
+    <div class="work-contact-actions">
+      <a
+        href="{{ '/experience/' | relative_url }}"
+        class="btn btn-primary"
+      >
+        Experience
+      </a>
+
+      <a
+        href="{{ '/about/' | relative_url }}"
+        class="btn btn-secondary"
+      >
+        About Me
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/chrisarndt777/"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-secondary"
+      >
+        LinkedIn ↗
+      </a>
+    </div>
+
+  </div>
+</section>
