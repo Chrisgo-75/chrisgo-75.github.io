@@ -1,0 +1,27 @@
+title: Chris Arndt
+description: >
+  Portfolio of Chris Arndt, application developer specializing in
+  web applications, APIs, integrations, and websites.
+
+lang: en-US
+timezone: America/Chicago
+
+url: ""
+baseurl: ""
+
+permalink: pretty
+
+markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Dockerfile
+  - compose.yml
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+

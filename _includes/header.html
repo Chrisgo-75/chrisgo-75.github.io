@@ -1,0 +1,63 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar">
+    <div class="container">
+
+      <a class="navbar-brand fw-semibold"
+         href="{{ '/' | relative_url }}">
+        Chris Arndt
+      </a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+
+        <ul class="navbar-nav ms-auto">
+
+          <li class="nav-item">
+            <a
+              class="nav-link{% if page.url == '/' %} active{% endif %}"
+              href="{{ '/' | relative_url }}">
+              Home
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link{% if page.url contains '/about/' %} active{% endif %}"
+              href="{{ '/about/' | relative_url }}">
+              About
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link{% if page.url contains '/apps/' %} active{% endif %}"
+              href="{{ '/apps/' | relative_url }}">
+              Apps
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a
+              class="nav-link{% if page.url contains '/sites/' %} active{% endif %}"
+              href="{{ '/sites/' | relative_url }}">
+              Sites
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+</header>

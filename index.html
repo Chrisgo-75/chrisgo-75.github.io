@@ -1,0 +1,486 @@
+---
+layout: default
+title: Home
+---
+
+<!-- =========================================================
+     Hero
+========================================================= -->
+<section class="home-hero">
+  <div class="container home-hero-inner">
+    <p class="home-eyebrow">Backend &amp; Application Developer</p>
+
+    <h1>
+      Building reliable applications,
+      APIs, and integrations.
+    </h1>
+
+    <p class="home-hero-lead">
+      I'm Chris Arndt, a software developer with more than a decade
+      of experience building, integrating, deploying, and maintaining
+      production applications.
+    </p>
+
+    <p class="home-hero-summary">
+      My work has evolved from full-stack PHP and Ruby on Rails
+      applications to Rails APIs, enterprise data integrations,
+      database-driven systems, and Rails-powered mobile applications.
+    </p>
+
+    <div class="home-hero-actions">
+      <a href="#featured-work" class="btn btn-primary">
+        View My Work
+      </a>
+
+      <a href="{{ '/experience/' | relative_url }}" class="btn btn-secondary">
+        Experience
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Areas of focus
+========================================================= -->
+<section class="home-section">
+  <div class="container">
+    <header class="section-heading">
+      <p class="section-eyebrow">What I Do</p>
+      <h2>Building the systems behind the application</h2>
+
+      <p>
+        I specialize in backend development and the systems that
+        connect applications, data, authentication, and infrastructure.
+      </p>
+    </header>
+
+    <div class="focus-grid">
+
+      <article class="focus-card">
+        <h3>Backend &amp; APIs</h3>
+
+        <p>
+          Ruby on Rails applications and REST APIs designed around
+          business requirements, maintainability, authentication,
+          authorization, and reliable application behavior.
+        </p>
+
+        <p class="technology-list">
+          Ruby · Rails · REST APIs · JSON · Background Jobs
+        </p>
+      </article>
+
+      <article class="focus-card">
+        <h3>Data &amp; Integrations</h3>
+
+        <p>
+          Applications that connect institutional systems, external
+          APIs, relational databases, and business processes through
+          synchronization, auditing, and data transformation.
+        </p>
+
+        <p class="technology-list">
+          MySQL · Oracle · SQL · REST APIs · Microsoft Graph
+        </p>
+      </article>
+
+      <article class="focus-card">
+        <h3>Application Infrastructure</h3>
+
+        <p>
+          Experience extending beyond application code into deployment,
+          Linux administration, containers, CI/CD, security updates,
+          certificates, and long-term production support.
+        </p>
+
+        <p class="technology-list">
+          Docker · Ubuntu · GitLab CI/CD · GitHub Actions
+        </p>
+      </article>
+
+      <article class="focus-card">
+        <h3>Web &amp; Mobile</h3>
+
+        <p>
+          Full-stack web development experience along with newer
+          Rails-powered mobile applications using Hotwire Native
+          for iOS and Android.
+        </p>
+
+        <p class="technology-list">
+          Hotwire · Stimulus · Bootstrap · iOS · Android
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Featured work
+========================================================= -->
+<section id="featured-work" class="home-section home-section-alt">
+  <div class="container">
+    <header class="section-heading">
+      <p class="section-eyebrow">Featured Work</p>
+      <h2>Selected application development</h2>
+
+      <p>
+        A selection of systems I've helped design, develop, integrate,
+        and maintain during my work with UW–Madison CALS.
+      </p>
+    </header>
+
+    <div class="project-grid">
+
+      <!-- CALS Data -->
+      <article class="project-card">
+        <div class="project-card-header">
+          <p class="project-type">Data Integration</p>
+          <h3>CALS Data</h3>
+        </div>
+
+        <p>
+          A long-running Rails application responsible for synchronizing
+          institutional people, employment, and organizational data with
+          CALS systems.
+        </p>
+
+        <p>
+          The application has evolved alongside changing campus systems
+          and now integrates with modern APIs while performing scheduled
+          synchronization, reconciliation, and data-integrity auditing.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Enterprise data synchronization</li>
+          <li>Campus API integrations</li>
+          <li>Automated reconciliation and auditing</li>
+          <li>Long-term production application ownership</li>
+        </ul>
+
+        <p class="technology-list">
+          Rails · Ruby · MySQL · REST APIs · Docker
+        </p>
+
+        <a href="{{ '/work/cals-data/' | relative_url }}"
+           class="text-link">
+          View case study →
+        </a>
+      </article>
+
+
+      <!-- WRA -->
+      <article class="project-card">
+        <div class="project-card-header">
+          <p class="project-type">Rails API</p>
+          <h3>Workday Role Access</h3>
+        </div>
+
+        <p>
+          A CALS application for requesting and managing Workday
+          security-role access through a multi-step approval process.
+        </p>
+
+        <p>
+          I work on the Rails API and backend architecture while a
+          frontend developer builds the Vue.js client application.
+        </p>
+
+        <ul class="project-highlights">
+          <li>REST API architecture</li>
+          <li>OIDC authentication with PKCE</li>
+          <li>JWT validation and authorization</li>
+          <li>Backend support for a Vue.js frontend</li>
+        </ul>
+
+        <p class="technology-list">
+          Rails · Vue.js · MySQL · OIDC · OAuth 2.0 · Pundit
+        </p>
+
+        <a href="{{ '/work/workday-role-access/' | relative_url }}"
+           class="text-link">
+          View case study →
+        </a>
+      </article>
+
+
+      <!-- ARS Portal -->
+      <article class="project-card">
+        <div class="project-card-header">
+          <p class="project-type">Web &amp; Mobile</p>
+          <h3>ARS Portal</h3>
+        </div>
+
+        <p>
+          A Rails-powered application serving Agricultural Research
+          Stations through web, iOS, and Android interfaces.
+        </p>
+
+        <p>
+          Hotwire Native allows the Rails application to retain the
+          business logic and web interface while lightweight native
+          applications provide the iOS and Android experience.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Shared Rails business logic</li>
+          <li>Native iOS application</li>
+          <li>Native Android application</li>
+          <li>Hotwire Native architecture</li>
+        </ul>
+
+        <p class="technology-list">
+          Rails · Hotwire · Hotwire Native · iOS · Android
+        </p>
+
+        <a href="{{ '/work/ars-portal/' | relative_url }}"
+           class="text-link">
+          View case study →
+        </a>
+      </article>
+
+
+      <!-- CALS Notifications -->
+      <article class="project-card">
+        <div class="project-card-header">
+          <p class="project-type">Automation</p>
+          <h3>CALS Notifications</h3>
+        </div>
+
+        <p>
+          A long-running Rails application that performs scheduled
+          background processing, system audits, data synchronization,
+          and operational notifications for CALS IT.
+        </p>
+
+        <p>
+          The application automates recurring processes that previously
+          required manual review and provides notifications when
+          data or system conditions require attention.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Scheduled background jobs</li>
+          <li>Automated audits and notifications</li>
+          <li>Campus system integrations</li>
+          <li>Long-term production support</li>
+        </ul>
+
+        <p class="technology-list">
+          Rails · Ruby · MySQL · APIs · Background Jobs
+        </p>
+
+        <a href="{{ '/work/cals-notifications/' | relative_url }}"
+           class="text-link">
+          View case study →
+        </a>
+      </article>
+
+    </div>
+
+    <div class="section-actions">
+      <a href="{{ '/work/' | relative_url }}" class="btn btn-primary">
+        View All Work
+      </a>
+
+      <a href="https://applications-showcased-947fb5.pages.doit.wisc.edu/"
+         class="btn btn-secondary"
+         target="_blank"
+         rel="noopener">
+        CALS IT Application Showcase ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Career evolution
+========================================================= -->
+<section class="home-section">
+  <div class="container">
+    <header class="section-heading">
+      <p class="section-eyebrow">Experience</p>
+      <h2>How my work has evolved</h2>
+
+      <p>
+        My career has grown from traditional web development into
+        backend engineering, application integration, APIs, data
+        systems, and cross-platform application development.
+      </p>
+    </header>
+
+    <div class="career-timeline">
+
+      <article class="career-item">
+        <p class="career-date">2011</p>
+
+        <div>
+          <h3>Web Application Development</h3>
+
+          <p>
+            Joined UW–Madison's College of Agricultural and Life
+            Sciences and began developing custom PHP web applications.
+          </p>
+        </div>
+      </article>
+
+      <article class="career-item">
+        <p class="career-date">2012–2024</p>
+
+        <div>
+          <h3>Full-Stack Ruby on Rails</h3>
+
+          <p>
+            Transitioned to Ruby on Rails and developed complete
+            applications spanning database design, backend logic,
+            user interfaces, NetID authentication, deployment, and
+            production server administration.
+          </p>
+        </div>
+      </article>
+
+      <article class="career-item">
+        <p class="career-date">2025–Present</p>
+
+        <div>
+          <h3>APIs &amp; Enterprise Integration</h3>
+
+          <p>
+            As CALS application development became more centralized,
+            my role increasingly focused on Rails APIs, database
+            architecture, authentication, campus APIs, Oracle and
+            MySQL data, and integrations supporting Vue.js applications.
+          </p>
+        </div>
+      </article>
+
+      <article class="career-item">
+        <p class="career-date">2026</p>
+
+        <div>
+          <h3>Rails-Powered Mobile Applications</h3>
+
+          <p>
+            Expanded into hybrid mobile development with Hotwire Native,
+            using Rails as the foundation for web, iOS, and Android
+            applications while keeping business logic centralized.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="section-actions">
+      <a href="{{ '/experience/' | relative_url }}" class="text-link">
+        More about my experience →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Client work
+========================================================= -->
+<section class="home-section home-section-alt">
+  <div class="container">
+    <header class="section-heading">
+      <p class="section-eyebrow">Client Work</p>
+      <h2>Small-business web development</h2>
+
+      <p>
+        Outside my university work, I help small businesses and
+        organizations establish and maintain their web presence
+        through CCArndt Ventures LLC.
+      </p>
+    </header>
+
+    <div class="client-grid">
+
+      <article class="client-card">
+        <h3>CherDan Chocolates</h3>
+
+        <p>
+          Website development and ongoing maintenance for a
+          Wisconsin chocolate business.
+        </p>
+
+        <a href="https://cherdanchocolates.com/"
+           target="_blank"
+           rel="noopener"
+           class="text-link">
+          Visit website ↗
+        </a>
+      </article>
+
+      <article class="client-card">
+        <h3>Bradford House</h3>
+
+        <p>
+          Website for a Southern Wisconsin lodging and retreat
+          property.
+        </p>
+
+        <a href="https://bradfordhouse2418.com/"
+           target="_blank"
+           rel="noopener"
+           class="text-link">
+          Visit website ↗
+        </a>
+      </article>
+
+      <article class="client-card">
+        <h3>Globe Sheet Metal</h3>
+
+        <p>
+          Small-business website presenting company information,
+          capabilities, and services.
+        </p>
+
+        <a href="https://globesheetmetal.com/"
+           target="_blank"
+           rel="noopener"
+           class="text-link">
+          Visit website ↗
+        </a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Final CTA
+========================================================= -->
+<section class="home-contact">
+  <div class="container home-contact-inner">
+    <div>
+      <p class="section-eyebrow">Let's Connect</p>
+
+      <h2>Interested in my work?</h2>
+
+      <p>
+        Learn more about my experience, current development work,
+        and the technologies I use to build and maintain applications.
+      </p>
+    </div>
+
+    <div class="home-contact-actions">
+      <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">
+        About Me
+      </a>
+
+      <a href="https://www.linkedin.com/in/chrisarndt777/"
+         target="_blank"
+         rel="noopener"
+         class="btn btn-secondary">
+        LinkedIn ↗
+      </a>
+    </div>
+  </div>
+</section>

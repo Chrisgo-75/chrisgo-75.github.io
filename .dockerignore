@@ -1,0 +1,15 @@
+.git
+.gitignore
+.github
+
+_site
+.jekyll-cache
+.jekyll-metadata
+.sass-cache
+
+.env
+
+README.md
+
+.DS_Store
+Thumbs.db
