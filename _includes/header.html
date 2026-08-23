@@ -1,63 +1,15 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-dark site-navbar">
-    <div class="container">
+<header class="site-header">
+  <div class="container site-header-inner">
+    <a href="{{ '/' | relative_url }}" class="site-brand">
+      Chris Arndt
+    </a>
 
-      <a class="navbar-brand fw-semibold"
-         href="{{ '/' | relative_url }}">
-        Chris Arndt
-      </a>
-
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#mainNavbar"
-        aria-controls="mainNavbar"
-        aria-expanded="false"
-        aria-label="Toggle navigation">
-
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="mainNavbar">
-
-        <ul class="navbar-nav ms-auto">
-
-          <li class="nav-item">
-            <a
-              class="nav-link{% if page.url == '/' %} active{% endif %}"
-              href="{{ '/' | relative_url }}">
-              Home
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a
-              class="nav-link{% if page.url contains '/about/' %} active{% endif %}"
-              href="{{ '/about/' | relative_url }}">
-              About
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a
-              class="nav-link{% if page.url contains '/apps/' %} active{% endif %}"
-              href="{{ '/apps/' | relative_url }}">
-              Apps
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a
-              class="nav-link{% if page.url contains '/sites/' %} active{% endif %}"
-              href="{{ '/sites/' | relative_url }}">
-              Sites
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-    </div>
-  </nav>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="{{ '/work/' | relative_url }}">Work</a>
+      <a href="{{ '/experience/' | relative_url }}">Experience</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ '/resume/' | relative_url }}">Resume</a>
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+    </nav>
+  </div>
 </header>
