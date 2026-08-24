@@ -1,0 +1,1042 @@
+---
+layout: default
+title: CALS Data
+permalink: /work/cals-data/
+---
+
+<!-- =========================================================
+     Project Hero
+========================================================= -->
+<section class="case-study-hero">
+  <div class="container case-study-hero-inner">
+
+    <a href="{{ '/work/' | relative_url }}"
+       class="case-study-back-link">
+      ← Back to Work
+    </a>
+
+    <p class="section-eyebrow">
+      Data Integration &amp; Reporting
+    </p>
+
+    <h1>CALS Data</h1>
+
+    <p class="case-study-hero-lead">
+      A long-running Ruby on Rails application that synchronizes
+      institutional people, employment, and organizational data
+      into a CALS-managed MySQL database for reporting, auditing,
+      and operational analysis.
+    </p>
+
+    <div class="case-study-meta">
+
+      <div class="case-study-meta-item">
+        <span class="case-study-meta-label">My Role</span>
+
+        <span>
+          Backend development, data integration, reporting,
+          database development, deployment, and production support
+        </span>
+      </div>
+
+      <div class="case-study-meta-item">
+        <span class="case-study-meta-label">Technology</span>
+
+        <span>
+          Ruby on Rails · MySQL · Person API · InfoAccess ·
+          Sidekiq · Docker
+        </span>
+      </div>
+
+      <div class="case-study-meta-item">
+        <span class="case-study-meta-label">Status</span>
+
+        <span>
+          Active production application
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Overview
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <div class="case-study-split">
+
+      <div class="case-study-section-heading">
+        <p class="section-eyebrow">Overview</p>
+
+        <h2>
+          A data platform whose role has evolved over time
+        </h2>
+      </div>
+
+      <div class="case-study-prose">
+
+        <p>
+          CALS Data was originally developed to give CALS applications
+          a reliable local source for institutional people, employment,
+          and organizational data. Campus data was synchronized into
+          CALS-2, a MySQL database that applications could query
+          without each application having to independently integrate
+          with university data systems.
+        </p>
+
+        <p>
+          That architecture has changed as UW–Madison has created
+          supported APIs for accessing institutional data. Newer CALS
+          applications increasingly query campus APIs directly rather
+          than depending on CALS-2 as their primary data source.
+        </p>
+
+        <p>
+          CALS Data still keeps CALS-2 current using sources such as
+          the campus Person API and InfoAccess, but the database now
+          serves increasingly as a reporting, auditing, and
+          data-analysis resource rather than the primary integration
+          layer for new applications.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Architecture
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Architecture</p>
+
+      <h2>Synchronizing institutional data for reporting and analysis</h2>
+
+      <p>
+        CALS Data retrieves authoritative university data, processes
+        synchronization work through Rails and Sidekiq, and maintains
+        selected CALS data in the CALS-2 MySQL database.
+      </p>
+    </header>
+
+
+    <div class="cals-data-architecture">
+
+      <!-- Sources -->
+      <div class="architecture-stage">
+        <p class="architecture-stage-label">
+          Campus Data Sources
+        </p>
+
+        <div class="architecture-source-grid">
+
+          <div class="case-architecture-box">
+            <strong>Person API</strong>
+
+            <span>
+              People and employment data
+            </span>
+          </div>
+
+          <div class="case-architecture-box">
+            <strong>InfoAccess</strong>
+
+            <span>
+              Institutional warehouse data
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="case-architecture-arrow"
+           aria-hidden="true">
+        ↓
+      </div>
+
+
+      <!-- Rails -->
+      <div class="architecture-stage">
+        <p class="architecture-stage-label">
+          Integration Application
+        </p>
+
+        <div class="case-architecture-box
+                    case-architecture-box-primary">
+
+          <strong>CALS Data</strong>
+
+          <span>Ruby on Rails</span>
+
+          <ul>
+            <li>Synchronization services</li>
+            <li>Data transformation</li>
+            <li>Reconciliation and auditing</li>
+            <li>Reporting queries</li>
+          </ul>
+
+        </div>
+      </div>
+
+
+      <div class="case-architecture-arrow"
+           aria-hidden="true">
+        ↓
+      </div>
+
+
+      <!-- Sidekiq -->
+      <div class="architecture-stage">
+        <p class="architecture-stage-label">
+          Background Processing
+        </p>
+
+        <div class="case-architecture-box">
+          <strong>Sidekiq</strong>
+
+          <span>
+            Scheduled and asynchronous processing
+          </span>
+        </div>
+      </div>
+
+
+      <div class="case-architecture-arrow"
+           aria-hidden="true">
+        ↓
+      </div>
+
+
+      <!-- Database -->
+      <div class="architecture-stage">
+        <p class="architecture-stage-label">
+          Local Data Store
+        </p>
+
+        <div class="case-architecture-box
+                    case-architecture-box-primary">
+
+          <strong>CALS-2</strong>
+
+          <span>
+            MySQL reporting and analysis database
+          </span>
+        </div>
+      </div>
+
+
+      <div class="case-architecture-arrow"
+           aria-hidden="true">
+        ↓
+      </div>
+
+
+      <!-- Uses -->
+      <div class="architecture-stage">
+        <p class="architecture-stage-label">
+          Current Uses
+        </p>
+
+        <div class="architecture-use-grid">
+
+          <div class="case-architecture-box">
+            <strong>Scheduled Reports</strong>
+
+            <span>
+              Operational reporting for CALS business processes
+            </span>
+          </div>
+
+          <div class="case-architecture-box">
+            <strong>Ad-hoc Queries</strong>
+
+            <span>
+              Investigation and data analysis
+            </span>
+          </div>
+
+          <div class="case-architecture-box">
+            <strong>Data Audits</strong>
+
+            <span>
+              Comparing synchronized and authoritative data
+            </span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- Modern application direction -->
+    <div class="architecture-direction">
+
+      <div>
+        <p class="architecture-direction-label">
+          Modern application direction
+        </p>
+
+        <h3>
+          New applications increasingly query campus APIs directly
+        </h3>
+
+        <p>
+          CALS-2 remains valuable for reporting and analysis, but
+          supported campus APIs increasingly provide the authoritative
+          data directly to newer applications.
+        </p>
+      </div>
+
+      <div class="architecture-direction-flow"
+           aria-label="Modern application data flow">
+
+        <div class="case-architecture-box">
+          Campus APIs
+        </div>
+
+        <span aria-hidden="true">→</span>
+
+        <div class="case-architecture-box">
+          CALS Applications
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Data Synchronization
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <div class="case-study-split">
+
+      <div class="case-study-section-heading">
+        <p class="section-eyebrow">Synchronization</p>
+
+        <h2>
+          Keeping CALS-2 aligned with campus data
+        </h2>
+      </div>
+
+      <div class="case-study-prose">
+
+        <p>
+          CALS Data continues to synchronize information needed for
+          CALS reporting and operational processes. Authoritative
+          information is retrieved from campus systems and reconciled
+          against existing CALS-2 records.
+        </p>
+
+        <p>
+          Synchronization includes people and employment information
+          as well as Workday supervisory organization data. Maintaining
+          organizational relationships locally makes it possible to
+          answer CALS-specific reporting questions that require
+          understanding where jobs fall within the university's
+          organizational hierarchy.
+        </p>
+
+
+        <div class="sync-flow"
+             aria-label="Typical synchronization process">
+
+          <div class="sync-step">
+            <span class="sync-step-number">1</span>
+
+            <div>
+              <strong>Retrieve</strong>
+              <span>authoritative campus data</span>
+            </div>
+          </div>
+
+          <div class="sync-flow-arrow"
+               aria-hidden="true">
+            ↓
+          </div>
+
+          <div class="sync-step">
+            <span class="sync-step-number">2</span>
+
+            <div>
+              <strong>Normalize</strong>
+              <span>data for local processing</span>
+            </div>
+          </div>
+
+          <div class="sync-flow-arrow"
+               aria-hidden="true">
+            ↓
+          </div>
+
+          <div class="sync-step">
+            <span class="sync-step-number">3</span>
+
+            <div>
+              <strong>Compare</strong>
+              <span>with existing CALS-2 records</span>
+            </div>
+          </div>
+
+          <div class="sync-flow-arrow"
+               aria-hidden="true">
+            ↓
+          </div>
+
+          <div class="sync-step">
+            <span class="sync-step-number">4</span>
+
+            <div>
+              <strong>Update</strong>
+              <span>current local data</span>
+            </div>
+          </div>
+
+          <div class="sync-flow-arrow"
+               aria-hidden="true">
+            ↓
+          </div>
+
+          <div class="sync-step">
+            <span class="sync-step-number">5</span>
+
+            <div>
+              <strong>Reconcile</strong>
+              <span>unexpected differences</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Reporting
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Reporting</p>
+
+      <h2>Turning synchronized data into operational information</h2>
+
+      <p>
+        One of CALS-2's primary roles today is supporting recurring
+        and ad-hoc reporting that combines people, employment, and
+        organizational information.
+      </p>
+    </header>
+
+
+    <div class="report-grid">
+
+      <article class="report-card">
+        <p class="report-frequency">
+          Weekly
+        </p>
+
+        <h3>Termed Employees</h3>
+
+        <p>
+          Identifies CALS employees whose employment ended during
+          the previous week for CALS Business Services review.
+        </p>
+      </article>
+
+
+      <article class="report-card">
+        <p class="report-frequency">
+          Weekly
+        </p>
+
+        <h3>New Employees</h3>
+
+        <p>
+          Identifies employees with new CALS employment beginning
+          during the previous week.
+        </p>
+      </article>
+
+
+      <article class="report-card">
+        <p class="report-frequency">
+          Weekly
+        </p>
+
+        <h3>ARS HQ New Employees</h3>
+
+        <p>
+          Identifies new employees whose jobs fall within the
+          Agricultural Research Stations headquarters organizational
+          hierarchy using synchronized Supervisory Organization
+          data.
+        </p>
+      </article>
+
+
+      <article class="report-card">
+        <p class="report-frequency">
+          As Needed
+        </p>
+
+        <h3>Ad-hoc Analysis</h3>
+
+        <p>
+          CALS-2 also supports one-time queries and investigations
+          where locally synchronized people, job, or organizational
+          data can answer operational questions.
+        </p>
+      </article>
+
+    </div>
+
+
+    <div class="case-study-callout">
+
+      <div>
+        <p class="section-eyebrow">
+          An Important Distinction
+        </p>
+
+        <h3>
+          CALS-2 is increasingly a reporting resource,
+          not an application dependency.
+        </h3>
+
+        <p>
+          As supported campus APIs have matured, newer applications
+          can retrieve authoritative information directly. CALS-2
+          remains useful where synchronized data, organizational
+          relationships, historical analysis, or complex reporting
+          provide value.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Sidekiq
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <div class="case-study-split">
+
+      <div class="case-study-section-heading">
+        <p class="section-eyebrow">
+          Background Processing
+        </p>
+
+        <h2>
+          Sidekiq handles scheduled and asynchronous work
+        </h2>
+      </div>
+
+      <div class="case-study-prose">
+
+        <p>
+          Synchronization and auditing can involve large numbers
+          of records and interactions with external systems.
+          CALS Data uses Sidekiq to move this work outside the
+          normal web request lifecycle.
+        </p>
+
+        <p>
+          Background jobs allow synchronization processes to run
+          independently, while Sidekiq's web interface provides
+          visibility into queues, active jobs, scheduled work,
+          retries, and failures.
+        </p>
+
+
+        <div class="sidekiq-feature-grid">
+
+          <div class="sidekiq-feature">
+            <strong>Scheduled Work</strong>
+
+            <span>
+              Recurring synchronization and audit jobs
+            </span>
+          </div>
+
+          <div class="sidekiq-feature">
+            <strong>Asynchronous Processing</strong>
+
+            <span>
+              Long-running work outside HTTP requests
+            </span>
+          </div>
+
+          <div class="sidekiq-feature">
+            <strong>Retries</strong>
+
+            <span>
+              Visibility into failed and retried jobs
+            </span>
+          </div>
+
+          <div class="sidekiq-feature">
+            <strong>Dashboard</strong>
+
+            <span>
+              Operational monitoring through Sidekiq Web
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Data Integrity
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <div class="case-study-split">
+
+      <div class="case-study-section-heading">
+        <p class="section-eyebrow">
+          Data Integrity
+        </p>
+
+        <h2>Synchronization also needs verification</h2>
+      </div>
+
+      <div class="case-study-prose">
+
+        <p>
+          A successful API request does not necessarily prove that
+          two systems remain synchronized correctly. CALS Data
+          therefore includes reconciliation and auditing processes
+          that compare authoritative campus information with
+          CALS-2.
+        </p>
+
+        <p>
+          These checks help identify missing records, unexpected
+          employment differences, stale information, or other
+          conditions that require investigation.
+        </p>
+
+        <p>
+          Treating verification as part of the synchronization
+          process makes the data pipeline more observable and
+          provides another way to detect changes in upstream
+          systems before they become reporting problems.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     My Role
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">My Role</p>
+
+      <h2>Backend development and long-term application ownership</h2>
+
+      <p>
+        My responsibilities span development, integration,
+        reporting, troubleshooting, deployment, and ongoing
+        operation of the application.
+      </p>
+    </header>
+
+
+    <div class="responsibility-grid">
+
+      <article class="responsibility-card">
+        <h3>Rails Development</h3>
+
+        <p>
+          Develop and maintain Rails services, background jobs,
+          reporting logic, and application functionality.
+        </p>
+      </article>
+
+
+      <article class="responsibility-card">
+        <h3>API Integration</h3>
+
+        <p>
+          Integrate with institutional data sources including
+          the Person API and InfoAccess.
+        </p>
+      </article>
+
+
+      <article class="responsibility-card">
+        <h3>Database &amp; SQL</h3>
+
+        <p>
+          Maintain MySQL data structures and develop SQL queries
+          supporting synchronization, audits, and reporting.
+        </p>
+      </article>
+
+
+      <article class="responsibility-card">
+        <h3>Reporting</h3>
+
+        <p>
+          Develop recurring and ad-hoc queries that turn
+          synchronized institutional data into useful operational
+          information.
+        </p>
+      </article>
+
+
+      <article class="responsibility-card">
+        <h3>Background Processing</h3>
+
+        <p>
+          Develop and monitor Sidekiq jobs used for scheduled,
+          asynchronous, and recurring application work.
+        </p>
+      </article>
+
+
+      <article class="responsibility-card">
+        <h3>Production Support</h3>
+
+        <p>
+          Troubleshoot integration and data issues and support
+          deployment, upgrades, containers, and ongoing production
+          operation.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Evolution
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Evolution</p>
+
+      <h2>Adapting as campus data access changes</h2>
+
+      <p>
+        One of the defining characteristics of CALS Data is that
+        its purpose and integrations have changed while the system
+        has remained useful.
+      </p>
+    </header>
+
+
+    <div class="evolution-grid">
+
+      <article class="evolution-stage">
+        <span class="evolution-stage-number">01</span>
+
+        <h3>Local Application Data</h3>
+
+        <p>
+          CALS-2 initially provided a common local database that
+          CALS applications could query for institutional people
+          and employment data.
+        </p>
+      </article>
+
+
+      <article class="evolution-stage">
+        <span class="evolution-stage-number">02</span>
+
+        <h3>Campus APIs Mature</h3>
+
+        <p>
+          UW–Madison began providing supported APIs that gave
+          applications direct access to authoritative institutional
+          information.
+        </p>
+      </article>
+
+
+      <article class="evolution-stage">
+        <span class="evolution-stage-number">03</span>
+
+        <h3>Integration Strategy Changes</h3>
+
+        <p>
+          New CALS applications increasingly consume campus APIs
+          directly rather than depending on CALS-2.
+        </p>
+      </article>
+
+
+      <article class="evolution-stage">
+        <span class="evolution-stage-number">04</span>
+
+        <h3>Reporting &amp; Analysis</h3>
+
+        <p>
+          CALS Data continues maintaining CALS-2 where synchronized
+          data provides value for reporting, auditing, organizational
+          queries, and operational analysis.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Engineering Challenges
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Engineering Challenges</p>
+
+      <h2>More than moving data from one system to another</h2>
+    </header>
+
+
+    <div class="challenge-grid">
+
+      <article class="challenge-card">
+        <h3>Reliable Synchronization</h3>
+
+        <p>
+          Keeping local data aligned with authoritative systems
+          while correctly handling new, changed, inactive, and
+          terminated records.
+        </p>
+      </article>
+
+
+      <article class="challenge-card">
+        <h3>Changing Source Systems</h3>
+
+        <p>
+          Adapting long-running integration logic as campus
+          systems move from warehouse-oriented access toward
+          supported institutional APIs.
+        </p>
+      </article>
+
+
+      <article class="challenge-card">
+        <h3>Organizational Hierarchies</h3>
+
+        <p>
+          Maintaining Supervisory Organization relationships
+          that make queries such as ARS HQ employment reporting
+          possible.
+        </p>
+      </article>
+
+
+      <article class="challenge-card">
+        <h3>Data Reconciliation</h3>
+
+        <p>
+          Determining whether differences represent synchronization
+          problems, source-system changes, or legitimate business
+          conditions.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Technology
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Technology</p>
+
+      <h2>Technology used by CALS Data</h2>
+    </header>
+
+
+    <div class="technology-table-wrapper">
+      <table class="technology-table">
+        <tbody>
+
+          <tr>
+            <th scope="row">Application</th>
+            <td>Ruby on Rails</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Language</th>
+            <td>Ruby</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Database</th>
+            <td>MySQL</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Institutional Data</th>
+            <td>Person API, InfoAccess</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Background Processing</th>
+            <td>Sidekiq and Sidekiq Web</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Containerization</th>
+            <td>Docker</td>
+          </tr>
+
+          <tr>
+            <th scope="row">CI/CD</th>
+            <td>GitLab CI/CD</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Hosting</th>
+            <td>Ubuntu Linux</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Outcome
+========================================================= -->
+<section class="case-study-outcome">
+  <div class="container case-study-outcome-inner">
+
+    <p class="section-eyebrow">Outcome</p>
+
+    <h2>
+      A long-running integration system that continues to
+      provide value as its role changes.
+    </h2>
+
+    <p>
+      CALS Data has evolved from primarily supporting application
+      data access into a platform for synchronized reporting,
+      auditing, and operational analysis. At the same time, newer
+      CALS applications are able to take advantage of supported
+      campus APIs and retrieve authoritative data directly.
+    </p>
+
+    <p>
+      Maintaining CALS Data through that transition has required
+      adapting integrations and data models while preserving the
+      reporting capabilities that continue to support CALS
+      business processes.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Project Navigation
+========================================================= -->
+<section class="case-study-navigation">
+  <div class="container case-study-navigation-inner">
+
+    <a href="{{ '/work/' | relative_url }}"
+       class="case-study-nav-item">
+
+      <span class="case-study-nav-label">
+        Portfolio
+      </span>
+
+      <strong>← Back to Work</strong>
+    </a>
+
+
+    <a
+      href="https://applications-showcased-947fb5.pages.doit.wisc.edu/"
+      target="_blank"
+      rel="noopener"
+      class="case-study-nav-item case-study-nav-item-center"
+    >
+
+      <span class="case-study-nav-label">
+        External
+      </span>
+
+      <strong>CALS IT Application Showcase ↗</strong>
+    </a>
+
+
+    <!-- Enable after the WRA case study exists.
+    <a href="{{ '/work/workday-role-access/' | relative_url }}"
+       class="case-study-nav-item case-study-nav-item-next">
+
+      <span class="case-study-nav-label">
+        Next Project
+      </span>
+
+      <strong>Workday Role Access →</strong>
+    </a>
+    -->
+
+  </div>
+</section>

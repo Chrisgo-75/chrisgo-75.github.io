@@ -1,0 +1,773 @@
+/* =========================================================
+   Case Study Hero
+========================================================= */
+
+.case-study-hero {
+  padding: 6rem 0 5rem;
+  background:
+    linear-gradient(
+      135deg,
+      #f7fafc 0%,
+      #ffffff 60%,
+      #edf3f7 100%
+    );
+  border-bottom: 1px solid $color-border;
+}
+
+.case-study-hero-inner {
+  max-width: 980px;
+}
+
+.case-study-back-link {
+  display: inline-block;
+  margin-bottom: 3rem;
+  color: $color-text-muted;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  &:hover,
+  &:focus {
+    color: $color-primary;
+  }
+}
+
+.case-study-hero h1 {
+  margin-bottom: 1.25rem;
+  font-size: clamp(3rem, 7vw, 5.25rem);
+  letter-spacing: -0.05em;
+}
+
+.case-study-hero-lead {
+  max-width: 850px;
+  margin-bottom: 2.5rem;
+  color: $color-text-muted;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   Project Metadata
+========================================================= */
+
+.case-study-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 3rem;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+}
+
+.case-study-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.5rem;
+
+  &:not(:last-child) {
+    border-right: 1px solid $color-border;
+  }
+
+  span:last-child {
+    color: $color-text-muted;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+}
+
+.case-study-meta-label {
+  color: $color-heading;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   General Case Study Sections
+========================================================= */
+
+.case-study-section {
+  padding: 6rem 0;
+}
+
+.case-study-section-alt {
+  background: $color-bg-alt;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+}
+
+.case-study-split {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.6fr);
+  gap: 5rem;
+  align-items: start;
+}
+
+.case-study-section-heading {
+  position: sticky;
+  top: 110px;
+
+  h2 {
+    margin-bottom: 0;
+    font-size: clamp(1.9rem, 3vw, 2.55rem);
+    letter-spacing: -0.03em;
+  }
+}
+
+.case-study-prose {
+  max-width: 780px;
+
+  p {
+    color: $color-text-muted;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  p:first-child {
+    color: $color-text;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/* =========================================================
+   Architecture
+========================================================= */
+
+.cals-data-architecture {
+  max-width: 850px;
+  margin: 4rem auto 0;
+}
+
+.architecture-stage {
+  text-align: center;
+}
+
+.architecture-stage-label {
+  margin-bottom: 0.75rem;
+  color: $color-text-muted;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.architecture-source-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.architecture-use-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.case-architecture-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 90px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  background: $color-bg;
+  text-align: center;
+
+  strong {
+    margin-bottom: 0.3rem;
+    color: $color-heading;
+    font-size: 1rem;
+  }
+
+  span {
+    color: $color-text-muted;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.25rem;
+      color: $color-text-muted;
+      font-size: 0.88rem;
+    }
+  }
+}
+
+.case-architecture-box-primary {
+  border-color: $color-primary;
+  background: $color-primary-light;
+
+  strong {
+    color: $color-primary-dark;
+    font-size: 1.15rem;
+  }
+}
+
+.case-architecture-arrow {
+  padding: 0.75rem 0;
+  color: $color-primary;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+/* =========================================================
+   Modern Architecture Direction
+========================================================= */
+
+.architecture-direction {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 0.8fr);
+  gap: 3rem;
+  align-items: center;
+  max-width: 980px;
+  margin: 4rem auto 0;
+  padding: 2rem;
+  border: 1px solid $color-border;
+  border-radius: 10px;
+  background: $color-bg;
+
+  h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
+  }
+
+  p {
+    margin-bottom: 0;
+    color: $color-text-muted;
+  }
+}
+
+.architecture-direction-label {
+  margin-bottom: 0.5rem !important;
+  color: $color-primary !important;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.architecture-direction-flow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  .case-architecture-box {
+    flex: 1;
+    min-height: 70px;
+  }
+
+  > span {
+    color: $color-primary;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+}
+
+
+/* =========================================================
+   Synchronization Flow
+========================================================= */
+
+.sync-flow {
+  margin-top: 2.5rem;
+}
+
+.sync-step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  background: $color-bg;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  strong {
+    color: $color-heading;
+  }
+
+  div span {
+    color: $color-text-muted;
+    font-size: 0.9rem;
+  }
+}
+
+.sync-step-number {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  border-radius: 50%;
+  background: $color-primary-light;
+  color: $color-primary-dark;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.sync-flow-arrow {
+  padding: 0.35rem 0;
+  color: $color-border;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+
+/* =========================================================
+   Reporting
+========================================================= */
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.report-card {
+  padding: 2rem;
+  border: 1px solid $color-border;
+  border-radius: 10px;
+  background: $color-bg;
+
+  h3 {
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+    color: $color-text-muted;
+    line-height: 1.7;
+  }
+}
+
+.report-frequency {
+  margin-bottom: 0.5rem;
+  color: $color-primary;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   Case Study Callout
+========================================================= */
+
+.case-study-callout {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-left: 4px solid $color-primary;
+  background: $color-primary-light;
+
+  h3 {
+    max-width: 750px;
+    margin-bottom: 0.75rem;
+    color: $color-primary-dark;
+    font-size: 1.35rem;
+  }
+
+  p:last-child {
+    max-width: 850px;
+    margin-bottom: 0;
+    color: $color-text-muted;
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   Sidekiq Features
+========================================================= */
+
+.sidekiq-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.sidekiq-feature {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border: 1px solid $color-border;
+  border-radius: 8px;
+  background: $color-bg;
+
+  strong {
+    margin-bottom: 0.35rem;
+    color: $color-heading;
+  }
+
+  span {
+    color: $color-text-muted;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* =========================================================
+   Responsibilities
+========================================================= */
+
+.responsibility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.responsibility-card {
+  padding: 1.75rem;
+  border: 1px solid $color-border;
+  border-radius: 10px;
+
+  h3 {
+    margin-bottom: 0.7rem;
+    font-size: 1.15rem;
+  }
+
+  p {
+    margin-bottom: 0;
+    color: $color-text-muted;
+    line-height: 1.65;
+  }
+}
+
+
+/* =========================================================
+   Evolution
+========================================================= */
+
+.evolution-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.evolution-stage {
+  padding: 1.75rem;
+  border: 1px solid $color-border;
+  border-radius: 10px;
+  background: $color-bg;
+
+  h3 {
+    margin-bottom: 0.7rem;
+    font-size: 1.15rem;
+  }
+
+  p {
+    margin-bottom: 0;
+    color: $color-text-muted;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+}
+
+.evolution-stage-number {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: $color-primary;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   Engineering Challenges
+========================================================= */
+
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.challenge-card {
+  padding: 2rem;
+  border: 1px solid $color-border;
+  border-radius: 10px;
+
+  h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin-bottom: 0;
+    color: $color-text-muted;
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   Technology
+========================================================= */
+
+.technology-table-wrapper {
+  max-width: 850px;
+  overflow-x: auto;
+  border: 1px solid $color-border;
+  border-radius: 10px;
+  background: $color-bg;
+}
+
+.technology-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid $color-border;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  tr:last-child {
+    th,
+    td {
+      border-bottom: 0;
+    }
+  }
+
+  th {
+    width: 35%;
+    color: $color-heading;
+    font-size: 0.9rem;
+  }
+
+  td {
+    color: $color-text-muted;
+  }
+}
+
+
+/* =========================================================
+   Outcome
+========================================================= */
+
+.case-study-outcome {
+  padding: 6rem 0;
+  background: $color-primary-dark;
+  color: #fff;
+
+  .section-eyebrow {
+    color: #bcd2e1;
+  }
+
+  h2 {
+    max-width: 900px;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.035em;
+  }
+
+  p {
+    max-width: 820px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.05rem;
+    line-height: 1.75;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.case-study-outcome-inner {
+  max-width: 980px;
+}
+
+
+/* =========================================================
+   Project Navigation
+========================================================= */
+
+.case-study-navigation {
+  border-top: 1px solid $color-border;
+  background: $color-bg;
+}
+
+.case-study-navigation-inner {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-study-nav-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 130px;
+  padding: 1.5rem;
+  color: $color-heading;
+
+  &:not(:last-child) {
+    border-right: 1px solid $color-border;
+  }
+
+  &:hover,
+  &:focus {
+    background: $color-bg-alt;
+    color: $color-primary;
+  }
+}
+
+.case-study-nav-item-center {
+  text-align: center;
+}
+
+.case-study-nav-item-next {
+  text-align: right;
+}
+
+.case-study-nav-label {
+  margin-bottom: 0.35rem;
+  color: $color-text-muted;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   Case Study - Tablet
+========================================================= */
+
+@media (max-width: $breakpoint-tablet) {
+  .case-study-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-meta-item {
+    &:not(:last-child) {
+      border-right: 0;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+
+  .case-study-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .case-study-section-heading {
+    position: static;
+  }
+
+  .architecture-direction {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .responsibility-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .evolution-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   Case Study - Mobile
+========================================================= */
+
+@media (max-width: $breakpoint-mobile) {
+  .case-study-hero {
+    padding: 4rem 0 3.5rem;
+  }
+
+  .case-study-back-link {
+    margin-bottom: 2rem;
+  }
+
+  .case-study-hero h1 {
+    font-size: 3rem;
+  }
+
+  .case-study-section,
+  .case-study-outcome {
+    padding: 4rem 0;
+  }
+
+  .architecture-source-grid,
+  .architecture-use-grid,
+  .report-grid,
+  .sidekiq-feature-grid,
+  .responsibility-grid,
+  .evolution-grid,
+  .challenge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-direction-flow {
+    align-items: stretch;
+    flex-direction: column;
+
+    > span {
+      transform: rotate(90deg);
+      text-align: center;
+    }
+  }
+
+  .technology-table {
+    th,
+    td {
+      display: block;
+      width: 100%;
+    }
+
+    th {
+      padding-bottom: 0.25rem;
+      border-bottom: 0;
+    }
+
+    td {
+      padding-top: 0.25rem;
+    }
+  }
+
+  .case-study-navigation-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-nav-item {
+    min-height: auto;
+
+    &:not(:last-child) {
+      border-right: 0;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+
+  .case-study-nav-item-center,
+  .case-study-nav-item-next {
+    text-align: left;
+  }
+}
