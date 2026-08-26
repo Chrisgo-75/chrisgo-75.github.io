@@ -1,0 +1,1307 @@
+---
+layout: default
+title: Workday Role Access
+permalink: /work/workday-role-access/
+---
+
+<!-- =========================================================
+     Project Hero
+========================================================= -->
+<section class="case-study-hero">
+  <div class="container case-study-hero-inner">
+
+    <a href="{{ '/work/' | relative_url }}"
+       class="case-study-back-link">
+      ← Back to Work
+    </a>
+
+    <p class="section-eyebrow">
+      Rails API &amp; Application Security
+    </p>
+
+    <h1>Workday Role Access</h1>
+
+    <p class="case-study-hero-lead">
+      A Rails API supporting a Vue.js application used by CALS
+      employees to request and track security-role access to Workday.
+    </p>
+
+    <div class="case-study-meta">
+
+      <div class="case-study-meta-item">
+        <span class="case-study-meta-label">My Role</span>
+
+        <span>
+          Rails API development, database design, authentication,
+          authorization, integrations, and backend architecture
+        </span>
+      </div>
+
+      <div class="case-study-meta-item">
+        <span class="case-study-meta-label">Technology</span>
+
+        <span>
+          Ruby on Rails · Vue.js · MySQL · OIDC · OAuth 2.0 ·
+          PKCE · JWT · Pundit
+        </span>
+      </div>
+
+      <div class="case-study-meta-item">
+        <span class="case-study-meta-label">Architecture</span>
+
+        <span>
+          Vue.js frontend with a separate Rails REST API backend
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Overview
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <div class="case-study-split">
+
+      <div class="case-study-section-heading">
+        <p class="section-eyebrow">Overview</p>
+
+        <h2>
+          Managing requests for Workday security access
+        </h2>
+      </div>
+
+      <div class="case-study-prose">
+
+        <p>
+          Workday Role Access, commonly called WRA, allows CALS
+          employees to request security-role access to Workday for
+          responsibilities involving areas such as human resources
+          and business services.
+        </p>
+
+        <p>
+          A request can move through multiple review and approval
+          stages. The application records its current state so that
+          requestors and administrative teams can determine where
+          the request is in the process and what action remains.
+        </p>
+
+        <p>
+          WRA also represents a newer CALS IT application architecture.
+          Rather than building the entire user interface in Rails,
+          the application separates responsibilities between a Vue.js
+          frontend and a Rails REST API backend.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Application Architecture
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Architecture</p>
+
+      <h2>Separating the frontend from the backend</h2>
+
+      <p>
+        The Vue.js application is responsible for the user experience,
+        while the Rails API handles application rules, data access,
+        authentication, authorization, and integration with other
+        systems.
+      </p>
+    </header>
+
+
+    <div class="case-study-architecture">
+
+      <div class="application-flow">
+
+        <div class="case-architecture-box">
+          <strong>Vue.js Frontend</strong>
+
+          <span>
+            Forms, application screens, and user interaction
+          </span>
+        </div>
+
+        <div class="application-flow-arrow"
+             aria-hidden="true">
+          →
+        </div>
+
+        <div class="case-architecture-box
+                    case-architecture-box-primary">
+          <strong>Rails REST API</strong>
+
+          <span>
+            Business rules, security, and application services
+          </span>
+        </div>
+
+        <div class="application-flow-arrow"
+             aria-hidden="true">
+          →
+        </div>
+
+        <div class="case-architecture-box">
+          <strong>MySQL</strong>
+
+          <span>
+            Requests, roles, application data, and workflow state
+          </span>
+        </div>
+
+      </div>
+
+
+      <div class="application-support-grid">
+
+        <div class="case-architecture-box">
+          <strong>UW Identity Provider</strong>
+
+          <span>
+            Authenticates the person using institutional credentials
+          </span>
+        </div>
+
+        <div class="case-architecture-box">
+          <strong>Manifest Groups</strong>
+
+          <span>
+            Provides group membership used when evaluating access
+          </span>
+        </div>
+
+        <div class="case-architecture-box">
+          <strong>Campus Services</strong>
+
+          <span>
+            Institutional information used by application workflows
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Request Workflow
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Workflow</p>
+
+      <h2>Tracking a request from submission through completion</h2>
+
+      <p>
+        WRA maintains the state of each security-role request as it
+        moves through the appropriate review and approval process.
+      </p>
+    </header>
+
+
+    <div class="evolution-grid">
+
+      <article class="evolution-stage">
+        <span class="evolution-stage-number">01</span>
+
+        <h3>Request</h3>
+
+        <p>
+          A CALS employee requests access to one or more Workday
+          security roles.
+        </p>
+      </article>
+
+
+      <article class="evolution-stage">
+        <span class="evolution-stage-number">02</span>
+
+        <h3>CALS Review</h3>
+
+        <p>
+          The request is routed to the appropriate CALS HR and/or
+          Business Services staff for review.
+        </p>
+      </article>
+
+
+      <article class="evolution-stage">
+        <span class="evolution-stage-number">03</span>
+
+        <h3>Approvals</h3>
+
+        <p>
+          The application tracks applicable division, supervisor,
+          and campus approval states as the request progresses.
+        </p>
+      </article>
+
+
+      <article class="evolution-stage">
+        <span class="evolution-stage-number">04</span>
+
+        <h3>Workday</h3>
+
+        <p>
+          Once the required reviews are complete, the request can
+          reach the stage where access is submitted in Workday.
+        </p>
+      </article>
+
+    </div>
+
+
+    <div class="case-study-callout">
+
+      <p class="section-eyebrow">
+        Workflow Visibility
+      </p>
+
+      <h3>
+        The application records where each request is in the process.
+      </h3>
+
+      <p>
+        Requests can represent states such as approved, rejected,
+        on hold, awaiting supervisor or campus action, or submitted
+        in Workday. This gives the application a consistent way to
+        represent a multi-step administrative process.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Security Intro
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Application Security</p>
+
+      <h2>Two different security questions</h2>
+
+      <p>
+        Authentication and authorization sound similar, but they
+        solve two different problems. WRA needs both.
+      </p>
+    </header>
+
+
+    <div class="auth-concept-grid">
+
+      <article class="auth-concept-card">
+
+        <div class="auth-concept-number">
+          1
+        </div>
+
+        <p class="auth-concept-type">
+          Authentication
+        </p>
+
+        <h3>Who are you?</h3>
+
+        <p>
+          Before WRA trusts a request, it needs to know who is using
+          the application. UW–Madison's identity system performs that
+          authentication rather than WRA collecting or validating the
+          person's password itself.
+        </p>
+
+        <div class="plain-language-note">
+          <strong>Plain language:</strong>
+
+          Think of this as showing your campus ID at the entrance.
+          It establishes your identity.
+        </div>
+
+      </article>
+
+
+      <article class="auth-concept-card">
+
+        <div class="auth-concept-number">
+          2
+        </div>
+
+        <p class="auth-concept-type">
+          Authorization
+        </p>
+
+        <h3>What are you allowed to do?</h3>
+
+        <p>
+          Knowing a person's identity does not automatically mean
+          that person should be able to perform every action. WRA
+          evaluates permissions separately using Manifest group
+          membership and Rails authorization policies.
+        </p>
+
+        <div class="plain-language-note">
+          <strong>Plain language:</strong>
+
+          Your campus ID gets you into the building. Authorization
+          determines which rooms you are allowed to enter.
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     OIDC
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <div class="case-study-split">
+
+      <div class="case-study-section-heading">
+        <p class="section-eyebrow">
+          Authentication
+        </p>
+
+        <h2>
+          OpenID Connect establishes the user's identity
+        </h2>
+      </div>
+
+      <div class="case-study-prose">
+
+        <p>
+          WRA uses OpenID Connect, or OIDC, to authenticate users
+          through UW–Madison's identity service.
+        </p>
+
+        <p>
+          Instead of asking a user to provide a password directly
+          to WRA, the application sends the user to the university's
+          trusted sign-in service. After authentication succeeds,
+          the identity service returns information that WRA can
+          validate and use to establish the current user.
+        </p>
+
+
+        <div class="plain-language-callout">
+
+          <p class="plain-language-label">
+            In plain language
+          </p>
+
+          <h3>
+            WRA asks UW–Madison, “Is this really Chris?”
+          </h3>
+
+          <p>
+            UW–Madison handles the password and campus login.
+            WRA receives cryptographically signed information
+            confirming who authenticated.
+          </p>
+
+          <p>
+            This means the application does not need to create
+            its own university-password system.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Authorization Code + PKCE
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">
+        Secure Login Flow
+      </p>
+
+      <h2>Authorization Code Flow with PKCE</h2>
+
+      <p>
+        WRA uses the Authorization Code flow with PKCE to securely
+        complete authentication between the Vue.js application and
+        UW–Madison's identity provider.
+      </p>
+    </header>
+
+
+    <div class="auth-flow">
+
+      <div class="auth-flow-step">
+
+        <span class="auth-flow-number">1</span>
+
+        <div>
+          <strong>User starts sign-in</strong>
+
+          <p>
+            The Vue.js application begins an authentication request.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="auth-flow-connector"
+           aria-hidden="true">
+        ↓
+      </div>
+
+
+      <div class="auth-flow-step">
+
+        <span class="auth-flow-number">2</span>
+
+        <div>
+          <strong>PKCE creates a one-time proof</strong>
+
+          <p>
+            The client creates a random secret for this login attempt
+            and sends a transformed version of it with the request.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="auth-flow-connector"
+           aria-hidden="true">
+        ↓
+      </div>
+
+
+      <div class="auth-flow-step">
+
+        <span class="auth-flow-number">3</span>
+
+        <div>
+          <strong>UW–Madison authenticates the user</strong>
+
+          <p>
+            The user signs in through the university identity system.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="auth-flow-connector"
+           aria-hidden="true">
+        ↓
+      </div>
+
+
+      <div class="auth-flow-step">
+
+        <span class="auth-flow-number">4</span>
+
+        <div>
+          <strong>A temporary code is returned</strong>
+
+          <p>
+            The browser receives a short-lived authorization code
+            rather than the user's credentials.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="auth-flow-connector"
+           aria-hidden="true">
+        ↓
+      </div>
+
+
+      <div class="auth-flow-step">
+
+        <span class="auth-flow-number">5</span>
+
+        <div>
+          <strong>The client proves it started the request</strong>
+
+          <p>
+            The original PKCE secret is supplied when exchanging the
+            authorization code. The identity service verifies that
+            it matches the proof created at the beginning.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="auth-flow-connector"
+           aria-hidden="true">
+        ↓
+      </div>
+
+
+      <div class="auth-flow-step">
+
+        <span class="auth-flow-number">6</span>
+
+        <div>
+          <strong>Tokens are returned and validated</strong>
+
+          <p>
+            The resulting identity and access information can then
+            be used when communicating with the Rails API.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="plain-language-callout plain-language-callout-wide">
+
+      <p class="plain-language-label">
+        Why PKCE matters
+      </p>
+
+      <h3>
+        Think of the authorization code as a claim ticket.
+      </h3>
+
+      <p>
+        Receiving the ticket alone should not be enough to claim
+        what it represents. PKCE creates a second piece of proof
+        known only to the client that originally started the login.
+      </p>
+
+      <p>
+        If another application intercepts the authorization code,
+        it does not also have the matching PKCE proof needed to
+        successfully exchange that code.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     JWT Validation
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <div class="case-study-split">
+
+      <div class="case-study-section-heading">
+        <p class="section-eyebrow">
+          API Authentication
+        </p>
+
+        <h2>
+          The Rails API verifies the identity information it receives
+        </h2>
+      </div>
+
+      <div class="case-study-prose">
+
+        <p>
+          The backend does not simply trust that a request contains
+          something that looks like a valid token. The Rails API
+          validates the signed token before using its identity
+          information.
+        </p>
+
+        <p>
+          This includes verifying that the token was issued by the
+          expected identity provider, is intended for the application,
+          has not expired, and has a valid cryptographic signature.
+        </p>
+
+
+        <div class="plain-language-callout">
+
+          <p class="plain-language-label">
+            In plain language
+          </p>
+
+          <h3>
+            It is not enough to show an ID card. The API also
+            verifies that the ID card is authentic.
+          </h3>
+
+          <p>
+            Once the token passes those checks, its verified identity
+            information can be used to establish the current user
+            for that API request.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Manifest + Pundit
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">
+        Authorization
+      </p>
+
+      <h2>Manifest groups and Pundit determine access</h2>
+
+      <p>
+        Once WRA knows who the user is, the next question is whether
+        that person is permitted to perform the requested action.
+      </p>
+    </header>
+
+
+    <div class="authorization-architecture">
+
+      <div class="authorization-component">
+
+        <span class="authorization-component-number">
+          1
+        </span>
+
+        <div>
+          <p class="authorization-component-label">
+            Identity
+          </p>
+
+          <h3>Authenticated User</h3>
+
+          <p>
+            The Rails API has already verified who is making the
+            request.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="authorization-arrow"
+           aria-hidden="true">
+        →
+      </div>
+
+
+      <div class="authorization-component">
+
+        <span class="authorization-component-number">
+          2
+        </span>
+
+        <div>
+          <p class="authorization-component-label">
+            Membership
+          </p>
+
+          <h3>Manifest Groups</h3>
+
+          <p>
+            Group membership provides information about organizational
+            or application-related access assigned to the person.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="authorization-arrow"
+           aria-hidden="true">
+        →
+      </div>
+
+
+      <div class="authorization-component">
+
+        <span class="authorization-component-number">
+          3
+        </span>
+
+        <div>
+          <p class="authorization-component-label">
+            Policy
+          </p>
+
+          <h3>Pundit</h3>
+
+          <p>
+            Rails policy classes evaluate whether the current user
+            is allowed to perform the requested action.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="authorization-arrow"
+           aria-hidden="true">
+        →
+      </div>
+
+
+      <div class="authorization-component
+                  authorization-component-result">
+
+        <span class="authorization-component-number">
+          4
+        </span>
+
+        <div>
+          <p class="authorization-component-label">
+            Decision
+          </p>
+
+          <h3>Allow or Deny</h3>
+
+          <p>
+            The API either continues with the request or returns an
+            authorization error.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="auth-concept-grid auth-concept-grid-spaced">
+
+      <article class="auth-concept-card">
+
+        <p class="auth-concept-type">
+          Manifest
+        </p>
+
+        <h3>Who belongs to which groups?</h3>
+
+        <p>
+          Manifest groups provide organizational membership
+          information that WRA can use when determining whether a
+          person has administrative or other application privileges.
+        </p>
+
+        <div class="plain-language-note">
+          <strong>Plain language:</strong>
+
+          Think of Manifest as supplying the badges a person belongs
+          to: for example, membership in an application administrator
+          group.
+        </div>
+
+      </article>
+
+
+      <article class="auth-concept-card">
+
+        <p class="auth-concept-type">
+          Pundit
+        </p>
+
+        <h3>What does that membership allow?</h3>
+
+        <p>
+          Pundit keeps authorization rules in policy classes.
+          Different resources can have policies describing who may
+          view, create, modify, or perform other actions.
+        </p>
+
+        <div class="plain-language-note">
+          <strong>Plain language:</strong>
+
+          Pundit acts like the security guard at each door. It checks
+          the person's verified identity and permissions before
+          allowing the action.
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Security Summary
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">
+        Putting It Together
+      </p>
+
+      <h2>The complete security story</h2>
+    </header>
+
+
+    <div class="security-summary">
+
+      <div class="security-summary-step">
+        <span>01</span>
+
+        <div>
+          <strong>OIDC</strong>
+
+          <p>
+            Establishes who the user is through UW–Madison's
+            identity provider.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="security-summary-step">
+        <span>02</span>
+
+        <div>
+          <strong>Authorization Code</strong>
+
+          <p>
+            Provides a temporary value used to complete the
+            authentication exchange.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="security-summary-step">
+        <span>03</span>
+
+        <div>
+          <strong>PKCE</strong>
+
+          <p>
+            Proves that the client redeeming the code is the same
+            client that started the login.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="security-summary-step">
+        <span>04</span>
+
+        <div>
+          <strong>JWT Validation</strong>
+
+          <p>
+            Allows the Rails API to verify the signed identity and
+            access information it receives.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="security-summary-step">
+        <span>05</span>
+
+        <div>
+          <strong>Manifest Groups</strong>
+
+          <p>
+            Provide group-membership information used when evaluating
+            application access.
+          </p>
+        </div>
+      </div>
+
+
+      <div class="security-summary-step">
+        <span>06</span>
+
+        <div>
+          <strong>Pundit Policies</strong>
+
+          <p>
+            Decide whether the authenticated user may perform the
+            requested action.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="case-study-callout">
+
+      <p class="section-eyebrow">
+        The Key Distinction
+      </p>
+
+      <h3>
+        Login and permissions are intentionally separate.
+      </h3>
+
+      <p>
+        OIDC, Authorization Code, PKCE, and token validation establish
+        a trustworthy identity. Manifest groups and Pundit then use
+        that identity to determine what the person is permitted to do.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     My Role
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">My Role</p>
+
+      <h2>Backend architecture and Rails API development</h2>
+
+      <p>
+        My primary responsibility is the Rails API and the systems
+        behind it, while working collaboratively with the developer
+        responsible for the Vue.js frontend.
+      </p>
+    </header>
+
+
+    <div class="responsibility-grid">
+
+      <article class="responsibility-card">
+        <h3>Rails API</h3>
+
+        <p>
+          Design and develop REST endpoints that provide application
+          data and business behavior to the Vue.js frontend.
+        </p>
+      </article>
+
+
+      <article class="responsibility-card">
+        <h3>Database Design</h3>
+
+        <p>
+          Participate in requirements gathering and design the
+          relational data structures supporting requests, security
+          roles, and workflow state.
+        </p>
+      </article>
+
+
+      <article class="responsibility-card">
+        <h3>Authentication</h3>
+
+        <p>
+          Implement OIDC Authorization Code authentication with PKCE
+          and backend JWT validation.
+        </p>
+      </article>
+
+
+      <article class="responsibility-card">
+        <h3>Authorization</h3>
+
+        <p>
+          Implement Pundit policies that use authenticated user
+          information and Manifest group membership to enforce
+          application permissions.
+        </p>
+      </article>
+
+
+      <article class="responsibility-card">
+        <h3>API Design</h3>
+
+        <p>
+          Provide predictable JSON responses and structured error
+          handling for frontend consumers.
+        </p>
+      </article>
+
+
+      <article class="responsibility-card">
+        <h3>Team Development</h3>
+
+        <p>
+          Work with the frontend developer and stakeholders on
+          requirements, workflows, database design, and API contracts.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Engineering Challenges
+========================================================= -->
+<section class="case-study-section">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">
+        Engineering Challenges
+      </p>
+
+      <h2>Designing a secure API for a multi-step business process</h2>
+    </header>
+
+
+    <div class="challenge-grid">
+
+      <article class="challenge-card">
+        <h3>Frontend / Backend Separation</h3>
+
+        <p>
+          Designing API contracts that allow the Vue.js frontend
+          and Rails backend to evolve independently while maintaining
+          consistent business behavior.
+        </p>
+      </article>
+
+
+      <article class="challenge-card">
+        <h3>Secure Authentication</h3>
+
+        <p>
+          Implementing institutional OIDC authentication for a
+          public client while protecting the Authorization Code
+          exchange with PKCE.
+        </p>
+      </article>
+
+
+      <article class="challenge-card">
+        <h3>Granular Authorization</h3>
+
+        <p>
+          Ensuring that authentication alone does not grant application
+          privileges and that each protected API operation is evaluated
+          against appropriate authorization rules.
+        </p>
+      </article>
+
+
+      <article class="challenge-card">
+        <h3>Workflow State</h3>
+
+        <p>
+          Representing a request that can move through several
+          administrative review, approval, rejection, hold, and
+          completion states.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Technology
+========================================================= -->
+<section class="case-study-section case-study-section-alt">
+  <div class="container">
+
+    <header class="section-heading">
+      <p class="section-eyebrow">Technology</p>
+
+      <h2>Technology used by Workday Role Access</h2>
+    </header>
+
+
+    <div class="technology-table-wrapper">
+
+      <table class="technology-table">
+        <tbody>
+
+          <tr>
+            <th scope="row">Backend</th>
+            <td>Ruby on Rails REST API</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Frontend</th>
+            <td>Vue.js</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Database</th>
+            <td>MySQL</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Authentication</th>
+            <td>OpenID Connect / OAuth 2.0 Authorization Code Flow</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Authentication Protection</th>
+            <td>PKCE — Proof Key for Code Exchange</td>
+          </tr>
+
+          <tr>
+            <th scope="row">API Identity</th>
+            <td>JWT validation</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Authorization</th>
+            <td>Pundit policies and Manifest group membership</td>
+          </tr>
+
+          <tr>
+            <th scope="row">API Format</th>
+            <td>JSON</td>
+          </tr>
+
+          <tr>
+            <th scope="row">Containerization</th>
+            <td>Docker</td>
+          </tr>
+
+          <tr>
+            <th scope="row">CI/CD</th>
+            <td>GitLab CI/CD</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Outcome
+========================================================= -->
+<section class="case-study-outcome">
+  <div class="container case-study-outcome-inner">
+
+    <p class="section-eyebrow">Outcome</p>
+
+    <h2>
+      A modern Rails API architecture supporting a secure
+      administrative workflow.
+    </h2>
+
+    <p>
+      Workday Role Access represents the evolution of my Rails
+      development work from traditional full-stack applications
+      toward backend APIs developed alongside dedicated frontend
+      applications.
+    </p>
+
+    <p>
+      The project combines business workflow design with several
+      important backend concerns: relational data modeling,
+      institutional authentication, secure token handling,
+      policy-based authorization, predictable API design, and
+      collaboration between frontend and backend developers.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- =========================================================
+     Project Navigation
+========================================================= -->
+<section class="case-study-navigation">
+  <div class="container case-study-navigation-inner">
+
+    <a href="{{ '/work/cals-data/' | relative_url }}"
+       class="case-study-nav-item">
+
+      <span class="case-study-nav-label">
+        Previous Project
+      </span>
+
+      <strong>← CALS Data</strong>
+    </a>
+
+
+    <a
+      href="https://applications-showcased-947fb5.pages.doit.wisc.edu/"
+      target="_blank"
+      rel="noopener"
+      class="case-study-nav-item case-study-nav-item-center"
+    >
+
+      <span class="case-study-nav-label">
+        External
+      </span>
+
+      <strong>CALS IT Application Showcase ↗</strong>
+    </a>
+
+
+    <!-- Enable after the ARS Portal case study exists.
+    <a href="{{ '/work/ars-portal/' | relative_url }}"
+       class="case-study-nav-item case-study-nav-item-next">
+
+      <span class="case-study-nav-label">
+        Next Project
+      </span>
+
+      <strong>ARS Portal →</strong>
+    </a>
+    -->
+
+  </div>
+</section>
